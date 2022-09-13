@@ -1,0 +1,18 @@
+{
+  "$id": "Error",
+  "required": [
+    "code",
+    "message"
+  ],
+  "properties": {
+    "code": {
+      "nullable": false,
+      "type": "integer"
+    },
+    "message": {
+      "nullable": false,
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

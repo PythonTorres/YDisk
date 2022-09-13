@@ -1,0 +1,87 @@
+{
+  "type": "object",
+  "required": [
+    "id",
+    "date",
+    "type"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "nullable": false,
+      "description": "Уникальный идентфикатор",
+      "example": "элемент_1_1"
+    },
+    "url": {
+      "description": "Ссылка на файл. Для папок поле равнно null.",
+      "type": "string",
+      "nullable": true
+    },
+    "date": {
+      "type": "string",
+      "format": "date-time",
+      "nullable": false,
+      "description": "Время последнего обновления элемента.",
+      "example": "2022-05-28T21:12:01.000Z"
+    },
+    "parentId": {
+      "type": "string",
+      "nullable": true,
+      "description": "id родительской папки",
+      "example": "элемент_1_1"
+    },
+    "type": {
+      "$ref": "resource:/model/SystemItemType.json"
+    },
+    "size": {
+      "description": "Целое число, для папки - это суммарный размер всех элеметов.",
+      "type": "integer",
+      "nullable": true,
+      "format": "int64"
+    },
+    "children": {
+      "description": "Список всех дочерних элементов. Для файлов поле равно null.",
+      "type": "array",
+      "items": {
+        "$ref": "resource:/model/SystemItem.json"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "example": {
+    "id": "элемент_1_2",
+    "url": null,
+    "type": "FOLDER",
+    "parentId": null,
+    "date": "2022-05-28T21:12:01.000Z",
+    "size": 12,
+    "children": [
+      {
+        "url": "/file/url1",
+        "id": "элемент_1_3",
+        "size": 4,
+        "date": "2022-05-28T21:12:01.000Z",
+        "type": "FILE",
+        "parentId": "элемент_1_2"
+      },
+      {
+        "type": "FOLDER",
+        "url": null,
+        "id": "элемент_1_1",
+        "date": "2022-05-26T21:12:01.000Z",
+        "parentId": "элемент_1_2",
+        "size": 8,
+        "children": [
+          {
+            "url": "/file/url2",
+            "id": "элемент_1_4",
+            "parentId": "элемент_1_1",
+            "date": "2022-05-26T21:12:01.000Z",
+            "size": 8,
+            "type": "FILE"
+          }
+        ]
+      }
+    ]
+  }
+}

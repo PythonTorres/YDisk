@@ -1,0 +1,14 @@
+{
+  "$id": "SystemItemHistoryResponse",
+  "type": "object",
+  "properties": {
+    "items": {
+      "description": "История в произвольном порядке.",
+      "type": "array",
+      "items": {
+        "$ref": "resource:/model/SystemItemHistoryUnit.json"
+      }
+    }
+  },
+  "additionalProperties": false
+}

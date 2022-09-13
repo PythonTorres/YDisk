@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "properties": {
+    "items": {
+      "type": "array",
+      "description": "Импортируемые элементы",
+      "nullable": false,
+      "items": {
+        "$ref": "resource:/model/SystemItemImport.json"
+      }
+    },
+    "updateDate": {
+      "type": "string",
+      "nullable": false,
+      "format": "date-time",
+      "example": "2022-05-28T21:12:01.000Z",
+      "description": "Время обновления добавляемых элементов."
+    }
+  },
+  "additionalProperties": false
+}

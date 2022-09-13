@@ -1,0 +1,43 @@
+{
+  "type": "object",
+  "required": [
+    "id",
+    "type"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "nullable": false,
+      "description": "Уникальный идентфикатор",
+      "example": "элемент_1_1"
+    },
+    "url": {
+      "description": "Ссылка на файл. Для папок поле равнно null.",
+      "type": "string",
+      "nullable": true
+    },
+    "parentId": {
+      "type": "string",
+      "nullable": true,
+      "example": "элемент_1_1",
+      "description": "id родительской папки"
+    },
+    "type": {
+      "$ref": "resource:/model/SystemItemType.json"
+    },
+    "size": {
+      "nullable": true,
+      "description": "Целое число, для папок поле должно содержать null.",
+      "type": "integer",
+      "format": "int64"
+    }
+  },
+  "additionalProperties": false,
+  "example": {
+    "id": "элемент_1_4",
+    "url": "/file/url1",
+    "parentId": "элемент_1_1",
+    "size": 234,
+    "type": "FILE"
+  }
+}

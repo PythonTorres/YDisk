@@ -1,0 +1,8 @@
+{
+  "type": "string",
+  "description": "Тип элемента - папка или файл",
+  "enum": [
+    "FILE",
+    "FOLDER"
+  ]
+}
