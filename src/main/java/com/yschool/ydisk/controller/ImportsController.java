@@ -7,6 +7,7 @@ import com.networknt.schema.JsonSchema;
 import com.networknt.schema.JsonSchemaFactory;
 import com.networknt.schema.SpecVersion;
 import com.networknt.schema.ValidationMessage;
+import com.yschool.ydisk.YdiskApplication;
 import com.yschool.ydisk.entity.SystemItem;
 import com.yschool.ydisk.model.ResponseError;
 import com.yschool.ydisk.model.SystemItemImport;
@@ -22,6 +23,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URL;
 import java.util.*;
 
 @RestController
@@ -36,7 +39,7 @@ public class ImportsController {
     private HashMap<String, SystemItemImport> importFoldersMap = new HashMap<String, SystemItemImport>();
     private HashMap<String, SystemItemImport> importFilesMap = new HashMap<String, SystemItemImport>();
 
-    private JsonNode getJsonSchemaNode() throws IOException {
+    private JsonNode getJsonSchemaNode() throws IOException, java.net.URISyntaxException {
         return objectMapper.readTree(new File("src/main/resources/model/SystemItemImportRequest.json"));
     }
 
@@ -197,7 +200,7 @@ public class ImportsController {
     }
 
     @PostMapping()
-    public ResponseEntity imports(@RequestBody String json) throws IOException {
+    public ResponseEntity imports(@RequestBody String json) throws IOException, java.net.URISyntaxException {
         JsonNode jsonNode;
         try {
             jsonNode = objectMapper.readTree(json);
