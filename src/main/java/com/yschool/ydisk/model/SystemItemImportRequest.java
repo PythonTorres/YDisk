@@ -1,15 +1,16 @@
 package com.yschool.ydisk.model;
 
+import java.util.Date;
 import java.util.List;
 
 public class SystemItemImportRequest {
     private List<SystemItemImport> items;
-    private String updateDate;
+    private Date updateDate;
 
     public SystemItemImportRequest() {
     }
 
-    public SystemItemImportRequest(List<SystemItemImport> items, String updateDate) {
+    public SystemItemImportRequest(List<SystemItemImport> items, Date updateDate) {
         this.items = items;
         this.updateDate = updateDate;
     }
@@ -18,7 +19,7 @@ public class SystemItemImportRequest {
         return items;
     }
 
-    public String getUpdateDate() {
+    public Date getUpdateDate() {
         return updateDate;
     }
 
@@ -26,7 +27,7 @@ public class SystemItemImportRequest {
         this.items = items;
     }
 
-    public void setUpdateDate(String updateDate) {
+    public void setUpdateDate(Date updateDate) {
         this.updateDate = updateDate;
     }
 }

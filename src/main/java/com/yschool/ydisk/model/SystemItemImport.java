@@ -5,12 +5,12 @@ public class SystemItemImport {
     private String url;
     private String parentId;
     private String type;
-    private long size;
+    private Long size;
 
     public SystemItemImport() {
     }
 
-    public SystemItemImport(String id, String url, String parentId, String type, long size) {
+    public SystemItemImport(String id, String url, String parentId, String type, Long size) {
         this.id = id;
         this.url = url;
         this.parentId = parentId;
@@ -34,7 +34,7 @@ public class SystemItemImport {
         return type;
     }
 
-    public long getSize() {
+    public Long getSize() {
         return size;
     }
 
@@ -54,7 +54,7 @@ public class SystemItemImport {
         this.type = type;
     }
 
-    public void setSize(long size) {
+    public void setSize(Long size) {
         this.size = size;
     }
 }
