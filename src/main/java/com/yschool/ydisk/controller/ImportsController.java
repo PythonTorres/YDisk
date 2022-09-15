@@ -37,7 +37,7 @@ public class ImportsController {
     private HashMap<String, SystemItemImport> importFilesMap = new HashMap<String, SystemItemImport>();
 
     private JsonNode getJsonSchemaNode() throws IOException {
-        return objectMapper.readTree(new File("build/resources/model/SystemItemImportRequest.json"));
+        return objectMapper.readTree(new File("src/main/resources/model/SystemItemImportRequest.json"));
     }
 
     private JsonSchema getJsonSchema(JsonNode jsonSchemaNode) {
